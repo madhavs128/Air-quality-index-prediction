@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport content="with=device-width, initial-scale=1.0 >
+        <title> Air Quality Predition </title>
+        
+   <style>
+        .header{
+            min-height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://cdn.technologynetworks.com/tn/images/thumbs/webp/640_360/sunlight-blocked-by-air-pollution-323444.webp?v=10345500);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            }
+       nav{
+           margin: 17% 18%;
+           color: white;
+           font-size: larger;
+           align-items:center;
+       }
+       form{
+           margin:2% 20%;
+           font-size:larger;
+       }
+      hel{
+          margin:8% 8%;
+          color: white;
+       }
+      
+    </style>
+         </head>
+    <body>
+    <section class="header">
+    <hel>
+        <p> &copy; Madhav </p>
+        </hel>
+<nav>
+       <h1> Air pollution is raising ! </h1>
+      
+    <p> Nowadays the air pollution is raising rapidly, keeping an eye on this the project is made</p>
+    <p> This Air Quality Prediction system bascically a Machine Learning projet using Linear regression algorithm </p>
+    <p> Below shown 2 buttons are one for cheaking particulate matter(pm2.5) and another is to cheak Air Quality Index(AQI)</p>
+    <p> If u want to calculate pm2.5 you can press pm_2.5 button </p>
+    <p>you will have to give inputs as Average Temperature, Maximum Temperature, Min Temp, Atmospheric pressure at sea level, Average relative humidity, Avg visibility, Avg wind speed, Maximum sustained wind speed </p>
+    <p> else you can go for calculating AQI by pressing AQI button, you will have to give inputs as PM2.5, PM10, NO2, NH3, SO2, CO, OZONE, </p>
+             <form method="POST" action="/">
+                 <input type="submit" name="submit_button" value="pm_2.5" style="width: 250px;">
+                 <input type="submit" name="submit_button" value="AQI" style="width: 250px;">
+                 
+             </form>
+             
+    
+        </nav>
+        </section>
+             </body>

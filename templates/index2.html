@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Air Quality Predition </title>
+        <style>
+          .header{
+            min-height: 100vh;
+            width: 100%;
+            background-image:linear-gradient(rgba(4,9,28,0.7),rgba(4,9,28,0.7)), url(https://www.thehealthy.com/wp-content/uploads/2018/08/lungs_air-pollution-effects.jpg);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            }
+          hel{
+               margin:20% 10%;
+          color: white;
+          }
+        form{
+           margin:14% 33%;
+           font-size:larger;
+       }
+             nav{
+              margin:1% 35%;
+           font-size:larger;
+           color: white;
+          }
+      </style>
+    </head>
+    <body>
+        <section class="header">
+            <hel>
+        <h1> Air quality index predictor </h1>
+                <h1> Please enter the form below </h1>
+                </hel>
+            <nav>
+            {% if lr_aqi %} 
+
+                    {% if not lr_aqi >51 %}
+                        <h1> Predicted value of AQI(ug/m3) is :
+                              <b><i> {{lr_aqi}} </i></b>
+                    <h2> <i> Good - Quality is considered to be satisfactory posses no risk to health </i> </h2>
+                    {% elif not lr_aqi>101 %}
+                        <h1> Predicted value of AQI(ug/m3) is :
+                              <b><i> {{lr_aqi}} </i></b>
+                    <h2><i> Moderate - Quality is considered acceptable, posses little risk to health </i></h2>
+                    {% elif not lr_aqi>151 %}
+                        <h1> Predicted value of AQI(ug/m3) is :
+                              <b><i> {{lr_aqi}} </i></b>
+                    <h2> <i>Unhealthy for sensitive groups like kids </i></h2>            
+                    {% elif not lr_aqi>201 %}
+                        <h1> Predicted value of AQI(ug/m3) is :
+                              <b><i> {{lr_aqi}} </i></b>
+                    <h2> <i> Unhealthy for all groups , everybody will begin to experience health effets </i></h2>              
+                    {% elif not lr_aqi>301 %}
+                        <h1> Predicted value of AQI(ug/m3) is :
+                              <b><i> {{lr_aqi}} </i></b>
+                    <h2><i> Very unhealthy , HEALTH ALERT!  </i></h2>              
+                    {% else %}
+                        <h1> Predicted value of AQI(ug/m3) is :
+                              <b><i> {{lr_aqi}} </i></b>
+                    <h2><i> Hazardous </i></h2>   
+                    {% endif %}
+        {% endif %}
+                </nav>
+        <form method="POST" action="/AQI1">
+            <input type="text"  placeholder="PM2.5" name='P_2'style="width: 500px;" style= "height:200px;">
+            <input type="text"  placeholder="PM10" name='P_10'style="width: 500px;" style= "height:200px;">
+            <input type="text"  placeholder="NO2" name='NO2'style="width: 500px;" style= "height:200px;">
+            <input type="text"  placeholder="NH3" name='NH3'style="width: 500px;" style= "height:200px;">
+            <input type="text"  placeholder="SO2" name='SO2'style="width: 500px;" style= "height:200px;">
+            <input type="text"  placeholder="CO" name='CO'style="width: 500px;" style= "height:200px;">
+            <input type="text"  placeholder="OZONE"name='O'style="width: 500px;" style= "height:200px;">
+            <input type="submit"style="width: 508px;" style= "height:200px;">
+        </form>
+        
+        
